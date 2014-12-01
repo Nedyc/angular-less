@@ -1,1 +1,20 @@
-authors
+<h1>Authors</h1>
+<div class="container">
+    Search: <input type="text" ng-model="fullname">
+
+    <table>
+	<tr ng-repeat="author in authors | filter: fullname | orderBy: ['surname','name']">
+	    <td>{{author.surname}}</td>
+	    <td>{{author.name}}</td>
+	    <td><a href="#/author/{{author.id}}">Edit</a></td>
+	</tr>
+    </table>
+    
+    
+    <br />
+    <h4>Create new</h4>
+    Name <input type="text" ng-model="newAuthor.name" />
+    Surname <input type="text" ng-model="newAuthor.surname" />
+    <button ng-click="addAuthor()">Add</button>
+</div>
+

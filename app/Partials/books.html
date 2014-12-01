@@ -1,1 +1,19 @@
-books
+<h1>Books</h1>
+<div class="container">
+    Search by title: <input type="text" ng-model="title" />
+
+    <table>
+	<tr ng-repeat="book in books | filter:title | orderBy: 'title'">
+	    <td>{{book.title}}</td>
+	    <td>{{book.description}}</td>
+	    <td><a href="#/book/{{book.id}}">Edit</a></td>
+	</tr>
+    </table>
+    
+    
+    <br />
+    <h4>Create new</h4>
+    Title <input type="text" ng-model="newBook.title" />
+    Description <input type="text" ng-model="newBook.description" />
+    <button ng-click="addBook()">Add</button>
+</div>

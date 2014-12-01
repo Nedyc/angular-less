@@ -1,17 +1,32 @@
-<h1>View 1</h1>
+<h1>Book Store</h1>
 <div class="container">
-    Name: <input type="text" ng-model="name" />
+    
 
-    <ul>
-	<li ng-repeat="person in persons | filter:name | orderBy: 'surname'">{{person.name | uppercase}} {{person.surname}}</li>
+
+    <ul ng-repeat="relation in relations | orderBy: ['fullname']">
+	<li>
+	    {{relation.fullname}}
+	    <ul ng-repeat="book in relation.books | orderBy: ['title']">
+		<li>{{book.title}} <button ng-click="removeRelation(book.id)">Remove</button></li>
+	    </ul>
+	</li>
     </ul>
     
     
-    <br />
-    <h4>New</h4>
-    Name: <input type="text" ng-model="newPerson.name" />
-    Surname: <input type="text" ng-model="newPerson.surname" />
-    <button ng-click="addPerson()">Add person</button>
-    
-    <a href="#/view2">View2</a>
+
+
+    <h4>Add new relation</h4>
+    Author 
+    <select ng-model="relation.author">
+	<option></option>
+	<option ng-repeat="author in authors | orderBy: ['surname','name']" value='{{author.id}}'>{{author.fullname}}</option>
+    </select>
+
+
+    Book 
+    <select ng-model="relation.book">
+	<option></option>
+	<option ng-repeat="book in books | orderBy: ['title']" value='{{book.id}}'>{{book.title}}</option>
+    </select>
+    <button ng-click="addRelation()">Add</button>
 </div>

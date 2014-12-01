@@ -16,27 +16,28 @@ demoApp.config(function($routeProvider){
             )
             .when("/books",
                 {
-                    controller: "BaseController",
+                    controller: "BooksController",
                     templateUrl:"app/Partials/books.html"
                 }
             )
-            .when("/books/:id",
+            .when("/book/:id",
                 {
-                    controller: "BaseController",
+                    controller: "BooksController",
                     templateUrl:"app/Partials/book.html"
                 }
             )
             .when("/authors",
                 {
-                    controller: "BaseController",
+                    controller: "AuthorsController",
                     templateUrl:"app/Partials/authors.html"
                 }
             )
-            .when("/authors/:id",
+            .when("/author/:id",
                 {
-                    controller: "BaseController",
-                    templateUrl:"app/Partials/authors.html"
+                    controller: "AuthorsController",
+                    templateUrl:"app/Partials/author.html"
                 }
             )
-            .otherwise({redirectTo:"/"})
+            .otherwise({redirectTo:"/"});
+    
 });

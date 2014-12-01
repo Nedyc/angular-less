@@ -1,11 +1,25 @@
-var controllers = {};
-controllers.BaseController = function($scope, BaseFactory){
-    $scope.persons = [];
+controllers.BaseController = function($scope, $routeParams, BaseFactory){
     function init(){
-        $scope.persons = BaseFactory.getPersons();
+        $scope.relations = [];
+        $scope.relations = BaseFactory.getRelations();
+        
+        $scope.authors = [];
+        $scope.authors = BaseFactory.getAuthors($routeParams.id);
+        
+        $scope.books = [];
+        $scope.books = BaseFactory.getBooks($routeParams.id);
     }
 
     init();
-
-    $scope.addPerson = function(){BaseFactory.addPerson($scope.newPerson.name, $scope.newPerson.surname);}
+    
+    
+    $scope.addRelation = function(){
+        BaseFactory.addRelation($scope.relation.author, $scope.relation.book);
+    };
+    
+    $scope.removeRelation = function(id){
+        if(confirm("Are you sure?"))
+            BaseFactory.removeRelation(id);
+    };
+    
 };

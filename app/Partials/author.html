@@ -1,1 +1,12 @@
-author
+<h1>Author</h1>
+<div class="container">   
+    <div ng-repeat="author in authors">
+	<h4>Edit {{author.surname}} {{author.name}}</h4>
+	Name <input type="text" ng-model="author.name" />
+	Surname <input type="text" ng-model="author.surname" />
+
+	<input type="hidden" ng-model="author.id" />
+	<button ng-click="editAuthor()">Edit</button>
+	<button ng-click="deleteAuthor()">Delete</button>
+    </div>
+</div>

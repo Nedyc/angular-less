@@ -1,1 +1,12 @@
-book
+<h1>Book</h1>
+<div class="container">   
+    <div ng-repeat="book in books">
+	<h4>Edit {{book.title}}</h4>
+	Title <input type="text" ng-model="book.title" />
+	Description <input type="text" ng-model="book.description" />
+
+	<input type="hidden" ng-model="book.id" />
+	<button ng-click="editBook()">Edit</button>
+	<button ng-click="deleteBook()">Delete</button>
+    </div>
+</div>
