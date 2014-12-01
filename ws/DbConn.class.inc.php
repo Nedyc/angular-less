@@ -1,9 +1,9 @@
 <?php
 class DbConn{
     public $db_host = "localhost";
-    public $db_user = "root";
-    public $db_pswd = "root";
-    public $db_name = "test";
+    public $db_user = "dorigotest";
+    public $db_pswd = "";
+    public $db_name = "my_dorigotest";
     
     public $conn;
     public $errors = array();

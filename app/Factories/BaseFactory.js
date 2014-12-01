@@ -10,7 +10,7 @@ var baseFactory = function($http, $location){
     factory.addBook = function(title, description){
         $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -23,7 +23,7 @@ var baseFactory = function($http, $location){
             if(data.errors != "")
                 alert(data.errors);
             else
-                books.push({title: title, description: description});
+                window.location.reload();
             
         });
         
@@ -42,7 +42,7 @@ var baseFactory = function($http, $location){
         
         $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -69,7 +69,7 @@ var baseFactory = function($http, $location){
         
         $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -99,7 +99,7 @@ var baseFactory = function($http, $location){
         
        $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -140,10 +140,10 @@ var baseFactory = function($http, $location){
     var authors = [];
 
     factory.addAuthor = function(name, surname){
-        alert(name, surname);
+        
         $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -155,8 +155,7 @@ var baseFactory = function($http, $location){
         }).success(function (data) {
             if(data.errors != "")
                 alert(data.errors);
-            else
-                authors.push({name: name, surname: surname});
+            else window.location.reload();
             
         });
         
@@ -175,7 +174,7 @@ var baseFactory = function($http, $location){
         
         $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -201,7 +200,7 @@ var baseFactory = function($http, $location){
     factory.deleteAuthor = function(id){
         $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -231,7 +230,7 @@ var baseFactory = function($http, $location){
        
        $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -268,7 +267,7 @@ var baseFactory = function($http, $location){
     factory.addRelation = function(author, book){
        $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -290,7 +289,7 @@ var baseFactory = function($http, $location){
     factory.removeRelation = function(id){
        $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
@@ -314,7 +313,7 @@ var baseFactory = function($http, $location){
        
        $http({
             method: 'POST',
-            url: "ws/",
+            url: "http://www.dorigotest.altervista.org/web_services/",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function(obj) {
                 var str = [];
