@@ -1,0 +1,63 @@
+.removeListBullets(){
+    li{list-style-type: none;}
+    ul{padding:0; margin:0;}
+}
+
+body{ padding: 10px;}
+
+label{
+    display: block;
+}
+
+form{
+    border: 1px solid #CCC;
+    padding:20px;
+    
+    input[type='text']{margin-bottom:10px;}
+}
+
+#main-text{
+    padding: 30px;
+    background-color: black;
+    color: white;
+}
+
+table{
+    width:  100%;
+    margin-top: 10px;
+    td, th{ padding: 10px; }
+    
+    thead{
+        font-weight:bold;
+        color:  white;
+        background-color:black;
+    }
+    
+    tbody tr:nth-child(odd){background-color: lighten(#CCC, 1   0%)}
+}
+
+#books_authors{
+    .removeListBullets();
+    
+    h4{padding:0;margin:20px 0 0 0;}
+    button{margin-right:10px;}
+}
+
+
+@linkColor: lightblue;
+#top-menu{
+    .removeListBullets();
+    
+    li{
+        margin-right: 10px;
+        display: inline;
+    }
+    
+    a{
+        text-decoration: none;
+        color:  @linkColor;
+        
+        &:hover{color: darken(@linkColor, 50%)}
+    }
+    
+}
